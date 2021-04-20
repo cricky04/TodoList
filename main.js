@@ -20,7 +20,27 @@ function deleteThis()
     var chId=this.id.replace('db_','');
     var deleteElement = document.getElementById('li_'+chId);
     var list=document.getElementById('todolist');
+    renameElementId(chId);
+    totalItems--;
     list.removeChild(deleteElement);
+}
+
+function renameElementId(chId)
+{
+    for(var i=chId+1;i<totalItems;i++)
+    {
+        var listItem = document.getElementById('li_'+chId);
+        var checkBox = document.getElementById('cb_'+chId);
+        var deleteButton = document.getElementById('db_'+chId);
+        var deadLine = document.getElementById('dl_'+chId);
+        var span = document.getElementById('item_'+chId);
+
+        listItem.id='li_'+chId-1;
+        checkBox.id='cb_'+chId-1;
+        deleteButton.id='db_'+chId-1;
+        deadLine.id='dl_'+chId-1;
+        span.id='item_'+chId-1;
+    }
 }
 
 function addNewItem(list, itemText,dDayTime)
@@ -45,7 +65,8 @@ function addNewItem(list, itemText,dDayTime)
     deleteButton.id='db_'+totalItems;
     deleteButton.onclick = deleteThis;
 
-    deadLine.id='dl_'+dDayTime;
+    deadLine.id='dl_'+totalItems;
+    deadLine.innerText = dDayTime;
 
     listItem.appendChild(deleteButton);
     listItem.appendChild(checkBox);
