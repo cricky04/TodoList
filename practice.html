@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <head>
+        <style>
+            .listBox
+            {
+                background: chocolate;
+                list-style: none;
+                font-size: 22px;
+                padding: 0;
+                margin-right: 30px;
+                width: 600px;
+                height: 400px;
+                float:left;
+                text-align: center;
+            }
+            ul 
+            {
+                margin-left: 50px;
+                background: coral;
+                list-style: none;
+                padding: 0;
+                width: 500px;
+                height: 300px;
+                float:left;
+                overflow: scroll;
+                text-align: left;
+            }
+            ul li
+            {
+                border: 1px solid #ccc;
+                background:#eee;
+                padding: 5px 10px;
+            }
+            .checked
+            {
+                text-decoration: line-through;
+                color: #c00;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>TodoList</h1>
+        <p>
+            <span> TODO?</span>
+            <input type="text" id="inputText"/>
+            <input type="date" id="dDay"/>
+        </p>
+        <span class="listBox">
+            <div>TODO</div>
+            <ul id="todolist"></ul>
+        </span>
+        <span class="listBox">
+            <div>DID</div>
+            <ul id="finishlist"></ul>
+        </span>
+
+        <script src="main.js"></script>
+    </body>
+</html>
